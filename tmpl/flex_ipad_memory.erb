@@ -1,0 +1,67 @@
+{
+  "type": "bubble",
+  "body": {
+    "type": "box",
+    "layout": "vertical",
+    "spacing": "md",
+    "contents": [
+      {
+        "type": "text",
+        "text": "メモリを選んでください"
+      },
+      {
+        "type": "text",
+        "text": "256GBは18,000円追加になります。",
+        "color": "#aaaaaa",
+        "size": "sm",
+        "wrap": true,
+        "margin": "lg"
+      },
+      {
+        "type": "separator"
+      },
+      {
+        "type": "text",
+        "text": "追加なし",
+        "color": "#aaaaaa",
+        "size": "sm",
+        "wrap": true,
+        "align": "center",
+        "margin": "lg"
+      },
+      {
+        "type": "button",
+        "style": "primary",
+        "action": {
+          "type": "postback",
+          "label": "64GB",
+          "data": "task=flex_ipad_model&type=ipad&color=<%= color %>&mem=64"
+        },
+        "color": "#2432AB"
+      },
+
+      {
+        "type": "separator"
+      },
+      {
+        "type": "text",
+        "text": "追加で+18,000円",
+        "color": "#aaaaaa",
+        "size": "sm",
+        "wrap": true,
+        "align": "center",
+        "margin": "lg"
+      },
+      {
+        "type": "button",
+        "style": "primary",
+        "action": {
+          "type": "postback",
+          "label": "256GB",
+          "data": "task=flex_ipad_model&type=ipad&color=<%= color %>&mem=256"
+        },
+        "color": "#2432AB"
+      }
+    ]
+  }
+}

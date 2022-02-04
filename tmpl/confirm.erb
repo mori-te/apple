@@ -1,0 +1,344 @@
+{
+  "type": "bubble",
+  "styles": {
+    "footer": {
+      "separator": true
+    }
+  },
+  "body": {
+    "type": "box",
+    "layout": "vertical",
+    "contents": [
+      {
+        "type": "text",
+        "text": "内容確認",
+        "weight": "bold",
+        "color": "#1DB446",
+        "size": "sm"
+      },
+      {
+        "type": "text",
+        "text": "選択内容",
+        "weight": "bold",
+        "size": "xxl",
+        "margin": "md",
+        "color": "#222222"
+      },
+      {
+        "type": "separator",
+        "margin": "xxl"
+      },
+      {
+        "type": "box",
+        "layout": "horizontal",
+        "contents": [
+          {
+            "type": "box",
+            "layout": "vertical",
+            "contents": [
+              {
+                "type": "text",
+                "text": "内容",
+                "size": "xs",
+                "weight": "regular",
+                "color": "#222222"
+              }
+            ]
+          },
+          {
+            "type": "box",
+            "layout": "vertical",
+            "contents": [
+              {
+                "type": "text",
+                "text": "　",
+                "size": "xs",
+                "align": "end",
+                "weight": "regular",
+                "color": "#222222"
+              }
+            ],
+            "width": "80px"
+          },
+          {
+            "type": "box",
+            "layout": "vertical",
+            "contents": [
+              {
+                "type": "text",
+                "text": "追加料金",
+                "size": "xs",
+                "align": "end",
+                "weight": "regular",
+                "color": "#222222"
+              }
+            ],
+            "width": "80px",
+            "margin": "sm"
+          }
+        ],
+        "margin": "md"
+      },
+      {
+        "type": "separator",
+        "margin": "md"
+      },
+      {
+        "type": "box",
+        "layout": "horizontal",
+        "contents": [
+          {
+            "type": "text",
+            "text": "商品",
+            "size": "sm",
+            "weight": "bold",
+            "color": "#222222"
+          },
+          {
+            "type": "text",
+            "text": "<%= price1 %>",
+            "weight": "bold",
+            "size": "sm",
+            "align": "end",
+            "color": "#222222"
+          }
+        ],
+        "margin": "xl"
+      },
+      {
+        "type": "box",
+        "layout": "horizontal",
+        "contents": [
+          {
+            "type": "box",
+            "layout": "vertical",
+            "contents": [
+              {
+                "type": "box",
+                "layout": "horizontal",
+                "contents": [
+                  {
+                    "type": "box",
+                    "layout": "vertical",
+                    "contents": [],
+                    "width": "2px",
+                    "backgroundColor": "#222222",
+                    "height": "20px",
+                    "position": "absolute"
+                  },
+                  {
+                    "type": "text",
+                    "size": "xs",
+                    "flex": 0,
+                    "margin": "xs",
+                    "offsetStart": "10px",
+                    "text": "<%= name %>",
+                    "color": "#999999"
+                  }
+                ]
+              }
+            ],
+            "margin": "xs"
+          },
+
+          {
+            "type": "box",
+            "layout": "vertical",
+            "contents": [
+              {
+                "type": "text",
+                "text": "<%= price1 %>",
+                "size": "xs",
+                "align": "end",
+                "color": "#999999"
+              }
+            ],
+            "margin": "xl",
+            "width": "80px"
+          }
+        ],
+        "margin": "sm"
+      },
+      {
+        "type": "box",
+        "layout": "horizontal",
+        "contents": [
+          {
+            "type": "text",
+            "text": "オプション",
+            "size": "sm",
+            "weight": "bold",
+            "color": "#222222"
+          },
+          {
+            "type": "text",
+            "text": "<%= detail_price_total %>",
+            "weight": "bold",
+            "size": "sm",
+            "align": "end",
+            "color": "#222222"
+          }
+        ],
+        "margin": "xl"
+      },
+      <% detail_options.each do |detail_option, detail_price| %>
+      {
+        "type": "box",
+        "layout": "horizontal",
+        "contents": [
+          {
+            "type": "box",
+            "layout": "vertical",
+            "contents": [
+              {
+                "type": "box",
+                "layout": "horizontal",
+                "contents": [
+                  {
+                    "type": "box",
+                    "layout": "vertical",
+                    "contents": [],
+                    "width": "2px",
+                    "backgroundColor": "#222222",
+                    "height": "20px",
+                    "position": "absolute",
+                    "margin": "xs"
+                  },
+                  {
+                    "type": "text",
+                    "size": "xs",
+                    "color": "#999999",
+                    "flex": 0,
+                    "margin": "xs",
+                    "offsetStart": "10px",
+                    "text": "<%= detail_option %>",
+                    "wrap": true
+                  }
+                ]
+              }
+            ],
+            "margin": "xs"
+          },
+          {
+            "type": "box",
+            "layout": "vertical",
+            "contents": [
+              {
+                "type": "text",
+                "text": "<%= detail_price %>",
+                "color": "#999999",
+                "size": "xs",
+                "align": "end"
+              }
+            ],
+            "margin": "xl",
+            "width": "80px"
+          }
+        ],
+        "margin": "sm"
+      },
+      <% end %>
+      {
+        "type": "separator",
+        "margin": "xxl"
+      },
+      {
+        "type": "box",
+        "layout": "horizontal",
+        "contents": [
+          {
+            "type": "box",
+            "layout": "vertical",
+            "contents": [
+              {
+                "type": "text",
+                "text": "追加",
+                "size": "sm",
+                "flex": 0,
+                "margin": "sm",
+                "weight": "bold",
+                "color": "#222222"
+              },
+              {
+                "type": "text",
+                "text": "料金",
+                "size": "sm",
+                "flex": 0,
+                "weight": "bold",
+                "color": "#222222"
+              }
+            ]
+          },
+          {
+            "type": "box",
+            "layout": "vertical",
+            "contents": [
+              {
+                "type": "spacer",
+                "size": "xl"
+              },
+              {
+                "type": "text",
+                "text": "<%= total_price %> (税込)",
+                "weight": "bold",
+                "size": "md",
+                "align": "end",
+                "color": "#222222"
+              }
+            ],
+            "width": "200px"
+          }
+        ],
+        "margin": "xl"
+      },
+      {
+        "type": "separator",
+        "margin": "xl"
+      },
+      {
+        "type": "button",
+        "style": "primary",
+        "action": {
+          "type": "postback",
+          "label": "送信",
+          "data": "task=send&<%= data_string %>"
+        },
+        "color": "#2432AB"
+      },
+      {
+        "type": "separator",
+        "margin": "sm"
+      },
+      {
+        "type": "button",
+        "style": "secondary",
+        "action": {
+          "type": "postback",
+          "label": "やり直し",
+          "data": "task=retry"
+        }
+      },
+      {
+        "type": "box",
+        "layout": "horizontal",
+        "margin": "md",
+        "contents": [
+          {
+            "type": "text",
+            "text": "ISSUE DATE",
+            "size": "xs",
+            "color": "#aaaaaa",
+            "flex": 0
+          },
+          {
+            "type": "text",
+            "text": "<%= today %>",
+            "color": "#aaaaaa",
+            "size": "xs",
+            "align": "end"
+          }
+        ]
+      }
+    ]
+  }
+}

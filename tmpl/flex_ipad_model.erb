@@ -1,0 +1,67 @@
+{
+  "type": "bubble",
+  "body": {
+    "type": "box",
+    "layout": "vertical",
+    "spacing": "md",
+    "contents": [
+      {
+        "type": "text",
+        "text": "モデルを選んでください"
+      },
+      {
+        "type": "text",
+        "text": "Cellularモデルは17,000円追加になります。",
+        "color": "#aaaaaa",
+        "size": "sm",
+        "wrap": true,
+        "margin": "lg"
+      },
+      {
+        "type": "separator"
+      },
+      {
+        "type": "text",
+        "text": "追加なし",
+        "color": "#aaaaaa",
+        "size": "sm",
+        "wrap": true,
+        "align": "center",
+        "margin": "lg"
+      },
+      {
+        "type": "button",
+        "style": "primary",
+        "action": {
+          "type": "postback",
+          "label": "Wi-Fiモデル",
+          "data": "task=flex_ipad_confirm&type=ipad&color=<%= color %>&mem=<%= mem %>&model=1"
+        },
+        "color": "#2432AB"
+      },
+
+      {
+        "type": "separator"
+      },
+      {
+        "type": "text",
+        "text": "追加で+17,000円",
+        "color": "#aaaaaa",
+        "size": "sm",
+        "wrap": true,
+        "align": "center",
+        "margin": "lg"
+      },
+      {
+        "type": "button",
+        "style": "primary",
+        "action": {
+          "type": "postback",
+          "label": "Cellularモデル",
+          "data": "task=flex_ipad_confirm&type=ipad&color=<%= color %>&mem=<%= mem %>&model=2"
+        },
+        "color": "#2432AB"
+      }
+    ]
+  }
+}

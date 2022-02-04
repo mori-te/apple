@@ -1,0 +1,67 @@
+{
+  "type": "bubble",
+  "body": {
+    "type": "box",
+    "layout": "vertical",
+    "spacing": "md",
+    "contents": [
+      {
+        "type": "text",
+        "text": "ケースサイズを選んでください"
+      },
+      {
+        "type": "text",
+        "text": "41mmは手首が130-200mmの方にフィットします。45mmは手首が140-220mmの方にフィットします。",
+        "color": "#aaaaaa",
+        "size": "sm",
+        "wrap": true,
+        "margin": "lg"
+      },
+      {
+        "type": "separator"
+      },
+      {
+        "type": "text",
+        "text": "追加なし",
+        "color": "#aaaaaa",
+        "size": "sm",
+        "wrap": true,
+        "align": "center",
+        "margin": "lg"
+      },
+      {
+        "type": "button",
+        "style": "primary",
+        "action": {
+          "type": "postback",
+          "label": "41mm",
+          "data": "task=flex_7_confirm&type=7&color=<%= color %>&size=41"
+        },
+        "color": "#2432AB"
+      },
+
+      {
+        "type": "separator"
+      },
+      {
+        "type": "text",
+        "text": "追加で+4,000円",
+        "color": "#aaaaaa",
+        "size": "sm",
+        "wrap": true,
+        "align": "center",
+        "margin": "lg"
+      },
+      {
+        "type": "button",
+        "style": "primary",
+        "action": {
+          "type": "postback",
+          "label": "45mm",
+          "data": "task=flex_7_confirm&type=7&color=<%= color %>&size=45"
+        },
+        "color": "#2432AB"
+      }
+    ]
+  }
+}
