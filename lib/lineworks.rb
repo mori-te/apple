@@ -97,21 +97,5 @@ module LineWorks
       [event, account_id, access_token]
     end
 
-    # レスポンス＆リクエストデータのencode/decode群
-    def enc(data)
-      URI.encode_www_form_component(data.to_json)
-    end
-
-    def dec(data)
-      JSON.parse(URI.decode_www_form_component(data))
-    end
-
-    def d(data)
-      Hash[URI.decode_www_form(data)]
-    end
-
-    def e(data)
-      URI.encode_www_form(data)
-    end
   end
 end
