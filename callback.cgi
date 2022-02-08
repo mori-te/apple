@@ -87,16 +87,7 @@ include Logger::Severity
 $log = Logger.new('callback.log')
 
 if ARGV.size > 0
-  #body = '{"type":"message","source":{"accountId":"tetsu@mo-net"},"createdTime":1643360355161,"content":{"type":"text","text":"TEST"}}'
-  #body = '{"type":"postback","data":"task=Watchse.flex_watchse&type=Watchse","source":{"accountId":"tetsu@mo-net","roomId":"129258418"},"createdTime":1643624240529}'
-  #body = '{"type":"postback","data":"task=Ipad.flex_ipad&type=ipad","source":{"accountId":"tetsu@mo-net","roomId":"129258418"},"createdTime":1643624240529}'
-  #body = '{"type":"postback","data":"task=Watchse.flex_se_size&type=se&color=2","source":{"accountId":"tetsu@mo-net","roomId":"129258418"},"createdTime":1643624240529}'
-  #body = '{"type":"postback","data":"task=Watchse.flex_se_confirm&type=se&color=2&size=44","source":{"accountId":"tetsu@mo-net","roomId":"129258418"},"createdTime":1643624240529}'
-  #body = '{"type":"postback","data":"task=Watch7.flex_7_confirm&type=se&color=2&size=45","source":{"accountId":"tetsu@mo-net","roomId":"129258418"},"createdTime":1643624240529}'
-  body = '{"type":"postback","data":"task=Ipad.flex_ipad_confirm&type=ipad\u0026color=2&mem=256&model=2","source":{"accountId":"tetsu@mo-net","roomId":"129258418"},"createdTime":1643624240529}'
-  #body = '{"type":"postback", "data":"task=send&type=ipad&color=2&mem=256&model=2&total_price=43000", "source":{"accountId":"tetsu@mo-net", "roomId":"129258418"}, "createdTime":1643865231519}'
-  #body = '{"type":"postback", "data":"task=retry", "source":{"accountId":"tetsu@mo-net", "roomId":"129258418"}, "createdTime":1643865332470}'
-  #body = ''
+  body = '{"type":"postback","data":"task=Watchse.flex_se_size&type=se&color=2","source":{"accountId":"mori-te@tsone","roomId":"3231011"},"createdTime":1644295478892}'
 else
   body = $stdin.read
 end
