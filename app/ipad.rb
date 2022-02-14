@@ -10,7 +10,7 @@ class Ipad < LineWorks::Application
   # Apple iPad
   # -------
   def init
-    @master = YAML.load_file('master.yaml')
+    load_master('master.yaml')
   end
 
   # カラー選択画面（iPad）
@@ -39,11 +39,11 @@ class Ipad < LineWorks::Application
     model = data["model"]
     type = data["type"]
 
-    name, price1 = @master["PROD_TYPE"][type]
+    name, price1 = @PROD_TYPE[type]
     detail_options = [
-      @master["COLOR_IPAD"][color.to_i - 1],
-      @master["MEMORY_IPAD"][mem],
-      @master["MODEL_IPAD"][model.to_i - 1]
+      @COLOR_IPAD[color.to_i - 1],
+      @MEMORY_IPAD[mem],
+      @MODEL_IPAD[model.to_i - 1]
     ]
     detail_price_total = 0
     detail_options.each do |name, price|

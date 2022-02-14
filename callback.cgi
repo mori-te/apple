@@ -17,7 +17,7 @@ class AppController < LineWorks::Controller
   def initialize(body)
     super(body)
     # マスタ取得
-    @master = YAML.load_file('master.yaml')
+    load_master('master.yaml')
   end
 
   # デフォルト表示
@@ -41,26 +41,26 @@ class AppController < LineWorks::Controller
     type = data["type"]
     color = data["color"]
     total_price = data["total_price"]
-    type_name = @master["PROD_TYPE"][type][0]
+    type_name = @PROD_TYPE[type][0]
     date = Time.now.strftime("%Y/%m/%d %H:%M:%S")
 
     case type
     when "se"
       size = data["size"]
-      color_name = @master["COLOR_SE"][color.to_i - 1][0]
-      size_name = @master["SIZE_SE"][size][0]
+      color_name = @COLOR_SE[color.to_i - 1][0]
+      size_name = @SIZE_SE[size][0]
       buffer = "#{@account_id},#{date},#{type_name},#{color_name},#{size_name},#{total_price}"
     when "7"
       size = data["size"]
-      color_name = @master["COLOR_7"][color.to_i - 1][0]
-      size_name = @master["SIZE_7"][size][0]
+      color_name = @COLOR_7[color.to_i - 1][0]
+      size_name = @SIZE_7[size][0]
       buffer = "#{@account_id},#{date},#{type_name},#{color_name},#{size_name},#{total_price}"
     when "ipad"
       memory = data["mem"]
       model = data["model"]
-      color_name = @master["COLOR_IPAD"][color.to_i - 1][0]
-      memory_name = @master["MEMORY_IPAD"][memory][0]
-      model_name = @master["MODEL_IPAD"][model.to_i - 1][0]
+      color_name = @COLOR_IPAD[color.to_i - 1][0]
+      memory_name = @MEMORY_IPAD[memory][0]
+      model_name = @MODEL_IPAD[model.to_i - 1][0]
       buffer = "#{@account_id},#{date},#{type_name},#{color_name},#{memory_name},#{model_name},#{total_price}"
     end
 
@@ -87,7 +87,8 @@ include Logger::Severity
 $log = Logger.new('callback.log')
 
 if ARGV.size > 0
-  body = '{"type":"postback","data":"task=Watchse.flex_se_size&type=se&color=2","source":{"accountId":"mori-te@tsone","roomId":"3231011"},"createdTime":1644295478892}'
+  #body = '{"type":"postback","data":"task=Watchse.flex_se_size&type=se&color=2","source":{"accountId":"mori-te@tsone","roomId":"3231011"},"createdTime":1644295478892}'
+  body = '{"type":"postback","data":"task=Watchse.flex_se_confirm&type=se&color=2&size=44","source":{"accountId":"mori-te@tsone","roomId":"129258418"},"createdTime":1643624240529}'
 else
   body = $stdin.read
 end

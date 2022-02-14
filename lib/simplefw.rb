@@ -5,7 +5,7 @@
 #
 require 'uri'
 require 'json'
-require './lib/lineworks'
+require_relative 'lineworks'
 require 'logger'
 
 # -------
@@ -22,7 +22,16 @@ module LineWorks
       end
     end
   end
+  module Master
+    def load_master(file)
+      test_yaml = YAML.load_file(file)
+      test_yaml.each do |key, val|
+        instance_variable_set("@#{key}", val)
+      end
+    end
+  end
   class Controller
+    include Master
     # 初期化
     def initialize(body)
       if body.size > 10
@@ -103,6 +112,7 @@ module LineWorks
 
   end    
   class Application
+    include Master
     def initialize(event, account_id, access_token, view, controller)
       @event = event
       @account_id = account_id

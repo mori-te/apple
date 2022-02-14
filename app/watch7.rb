@@ -10,7 +10,7 @@ class Watch7 < LineWorks::Application
   # Apple Watch 7
   # -------
   def init
-    @master = YAML.load_file('master.yaml')
+    load_master('master.yaml')
   end
 
   # カラー選択画面（7）
@@ -31,10 +31,10 @@ class Watch7 < LineWorks::Application
     size = data["size"]
     type = data["type"]
 
-    name, price1 = @master["PROD_TYPE"][type]
+    name, price1 = @PROD_TYPE[type]
     detail_options = [
-        @master["COLOR_7"][color.to_i - 1],
-        @master["SIZE_7"][size]
+        @COLOR_7[color.to_i - 1],
+        @SIZE_7[size]
     ]
     detail_price_total = 0
     detail_options.each do |name, price|
