@@ -2,7 +2,6 @@
 #
 # Apple Watch 7 選択画面クラス
 #
-require 'yaml'
 require './lib/simplefw'
 
 class Watch7 < LineWorks::Application

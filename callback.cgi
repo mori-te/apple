@@ -5,8 +5,6 @@
 #
 # Lineworks Bot App.
 #
-require 'yaml'
-require 'pp'
 require './lib/simplefw'
 
 # -------

@@ -2,7 +2,6 @@
 #
 # Apple Watch SE 選択画面クラス
 #
-require 'yaml'
 require './lib/simplefw'
 
 class Watchse < LineWorks::Application
