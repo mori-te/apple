@@ -43,6 +43,7 @@ module LineWorks
 
     # タスク呼び出し
     def get_model(task)
+      task = nil if task !~ /^[\w\.]*$/
       if task != nil and task != ""
         params = task.split(".")
         app, meth = (params.size == 2) ? params : [self, params[0]]
@@ -63,7 +64,6 @@ module LineWorks
           @m = get_model("message").call(@event)
         when LineWorks::Event::Postback
           data = d(@event["data"])
-          app = data["app"]
           task = data["task"] if task == nil
           @m = get_model(task).call(data)
         end
