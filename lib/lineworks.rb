@@ -48,7 +48,7 @@ module LineWorks
     # サーバトークン取得
     def get_server_token(token)
       # https://developers.worksmobile.com/jp/document/1002002?lang=ja
-      token_url = "https://authapi.worksmobile.com/b/#{@api_id}/server/token"
+      token_url = "https://auth.worksmobile.com/b/#{@api_id}/server/token"
       res = get_http(token_url) do |req|
         req["Content-Type"] = "application/x-www-form-urlencoded;charset=UTF-8"
         req.set_form_data({grant_type: "urn:ietf:params:oauth:grant-type:jwt-bearer", assertion: token})
@@ -97,21 +97,5 @@ module LineWorks
       [event, account_id, access_token]
     end
 
-    # レスポンス＆リクエストデータのencode/decode群
-    def enc(data)
-      URI.encode_www_form_component(data.to_json)
-    end
-
-    def dec(data)
-      JSON.parse(URI.decode_www_form_component(data))
-    end
-
-    def d(data)
-      Hash[URI.decode_www_form(data)]
-    end
-
-    def e(data)
-      URI.encode_www_form(data)
-    end
   end
 end
