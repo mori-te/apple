@@ -24,8 +24,8 @@ module LineWorks
   end
   module Master
     def load_master(file)
-      test_yaml = YAML.load_file(file)
-      test_yaml.each do |key, val|
+      yaml = YAML.load_file(file)
+      yaml.each do |key, val|
         instance_variable_set("@#{key}", val)
       end
     end
