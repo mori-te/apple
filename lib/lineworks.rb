@@ -65,9 +65,8 @@ module LineWorks
         req["consumerKey"] = @consumer_key
         req["Authorization"] = "Bearer #{token}"
         req.body ={botNo: @bot_no, accountId: account_id, content: content}.to_json
-        pp req.body
+        #pp req.body
       end
-      p res.body
     end
 
     # コンテンツ作成

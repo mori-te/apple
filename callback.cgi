@@ -23,7 +23,7 @@ class AppController < LineWorks::Controller
     print "Content-Type: text/plain\n\n"
   end
 
-  # メッセージ受信
+  # テキストメッセージ受信
   def message(event)
     # 商品選択画面
     next_screen(@view.flex_menu, "Apple Watch/iPad", binding)
