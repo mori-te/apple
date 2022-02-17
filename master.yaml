@@ -4,7 +4,7 @@
 PROD_TYPE:
   'se': [Apple Watch SE, 0]
   '7': [Apple Watch 7, 16000]
-  'ipad': [iPad (第9世代), 8000]
+  'ipad': [iPad (第9世代), 7000]
 
 COLOR_SE:
 - [シルバーアルミニウムケースとスポーツバンド（アビスブルー）, 0]
