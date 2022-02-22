@@ -49,7 +49,7 @@ module LineWorks
         params = task.split(".")
         app, meth = (params.size == 2) ? params : [self, params[0]]
         if (app != self)
-          app = eval(app).new(@event, @account_id, @access_token, @view, self)
+          app = Module.const_get(app).new(@event, @account_id, @access_token, @view, self)
         end
         app.method(meth)
       else
